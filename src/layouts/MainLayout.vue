@@ -13,8 +13,9 @@
       </q-toolbar>
       <div class="q-px-lg q-pt-xl q-mb-md">
         <div class="text-h3">Todo</div>
-        <div class="text-subtitle">Monday 18 October</div>
+        <div class="text-subtitle1">{{ todaysDate }}</div>
       </div>
+      <q-img src="~assets/mountains3.jpg" class="header-image absolute-top" />
     </q-header>
 
     <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
@@ -84,7 +85,28 @@ const linksList = [
 ];
 
 import { defineComponent, ref } from "vue";
+import { date } from "quasar";
 
+/* export default{
+
+  data() {
+
+    return {
+
+      computed: {
+        todaysDate() {
+          let timeStamp = Date.now();
+          let formattedString = date.formatDate(timeStamp, "dddd DD MMMM");
+          return formattedString;
+
+
+        }
+
+      }
+    }
+  }
+}
+*/
 export default defineComponent({
   name: "MainLayout",
 
@@ -105,3 +127,12 @@ export default defineComponent({
   },
 });
 </script>
+
+<style lang="scss">
+.header-image {
+  height: 100%;
+  z-index: -1;
+  opacity: 0.7;
+  filter: grayscale(100%);
+}
+</style>
