@@ -60,20 +60,7 @@ export default defineComponent({
   data() {
     return {
       newTask: "",
-      tasks: [
-        /* {
-          title: "get bananas",
-          done: false,
-        },
-        {
-          title: "get tomatoes",
-          done: false,
-        },
-        {
-          title: "get oranges",
-          done: false,
-        }, */
-      ],
+      tasks: [],
     };
   },
   methods: {

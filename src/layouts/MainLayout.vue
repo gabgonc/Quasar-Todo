@@ -13,7 +13,7 @@
       </q-toolbar>
       <div class="q-px-lg q-pt-xl q-mb-md">
         <div class="text-h3">Todo</div>
-        <div class="text-subtitle1">{{ formattedString }}</div>
+        <div class="text-subtitle1">{{ todaysDate }}</div>
       </div>
       <q-img src="~assets/mountains3.jpg" class="header-image absolute-top" />
     </q-header>
@@ -26,8 +26,8 @@
     >
       <q-scroll-area
         style="
-          height: calc(100% - 164px);
-          margin-top: 164px;
+          height: calc(100% - 192px);
+          margin-top: 192px;
           border-right: 1px solid #ddd;
         "
       >
@@ -58,7 +58,7 @@
       <q-img
         class="absolute-top"
         src="~assets/mountains3.jpg"
-        style="height: 164px"
+        style="height: 192px"
       >
         <div class="absolute-bottom bg-transparent">
           <q-avatar size="56px" class="q-mb-sm">
@@ -99,14 +99,14 @@ export default defineComponent({
       toggleLeftDrawer() {
         leftDrawerOpen.value = !leftDrawerOpen.value;
       },
-      computed: {
-        todaysDate() {
-          let timeStamp = Date.now();
-          let formattedString = date.formatDate(timeStamp, "dddd DD MMMM");
-          return formattedString;
-        },
-      },
     };
+  },
+  computed: {
+    todaysDate() {
+      let timeStamp = Date.now();
+      let formattedString = date.formatDate(timeStamp, "dddd DD MMMM");
+      return formattedString;
+    },
   },
 });
 </script>
